@@ -1,0 +1,28 @@
+#!/bin/bash
+echo Installing web checker...
+sudo apt install python3-pip python-dev
+sudo pip install requests
+x=0
+
+echo Installed web checker!
+sleep 2
+while [ $x = 0 ]
+do
+clear
+echo "Do you want to open the application now? (y/n)"
+read answer
+case "$answer" in
+	y)
+	sudo python3 install.py
+	x=1
+	;;
+	n)
+	x=1
+	;;
+	*)
+	clear
+	echo "Not a valid option"
+	x=0
+	;;
+esac
+done
